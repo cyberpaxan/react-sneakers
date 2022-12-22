@@ -44,7 +44,7 @@ function App() {
                             />
                             <div className='mr-20'>
                                 <p className='mb-5'>
-                                    Мужские кроссовки Nike Blazer Mid
+                                    Мужские кроссовки Nike Blazer Mid 270
                                 </p>
                                 <b>12 990 руб.</b>
                             </div>
