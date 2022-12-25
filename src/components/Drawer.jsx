@@ -1,60 +1,40 @@
 import React from 'react';
 
-const Drawer = () => {
+function Drawer({ onClose, items = [] }) {
     return (
-        <div>
+        <div className='overlay'>
             <div className='drawer'>
                 <h2 className='d-flex justify-between '>
                     Корзина
                     <img
+                        onClick={onClose}
                         className='removeBtn cu-p'
                         src='/img/btn-remove.svg'
-                        alt='Remove'
+                        alt='Close'
                     />
                 </h2>
 
                 <div className='items'>
-                    <div className='cartItem d-flex align-center'>
-                        <img
-                            className='mr-15'
-                            width={80}
-                            height={80}
-                            src='/img/sneakers/1.jpg'
-                            alt='Sneakers'
-                        />
-                        <div className='mr-20'>
-                            <p className='mb-5'>
-                                Мужские кроссовки Nike Blazer Mid
-                            </p>
-                            <b>12 990 руб.</b>
+                    {items.map((obj) => (
+                        <div className='cartItem d-flex align-center'>
+                            <img
+                                className='mr-15'
+                                width={95}
+                                height={80}
+                                src={`${obj.imageUrl}`}
+                                alt='Sneakers'
+                            />
+                            <div className='mr-20'>
+                                <p className='mb-5'>{obj.title}</p>
+                                <b>{obj.price} руб.</b>
+                            </div>
+                            <img
+                                className='removeBtn'
+                                src='/img/btn-remove.svg'
+                                alt='Remove'
+                            />
                         </div>
-                        <img
-                            className='removeBtn'
-                            src='/img/btn-remove.svg'
-                            alt='Remove'
-                        />
-                    </div>
-
-                    <div className='cartItem d-flex align-center'>
-                        <img
-                            className='mr-15'
-                            width={80}
-                            height={80}
-                            src='/img/sneakers/1.jpg'
-                            alt='Sneakers'
-                        />
-                        <div className='mr-20'>
-                            <p className='mb-5'>
-                                Мужские кроссовки Nike Blazer Mid 270
-                            </p>
-                            <b>12 990 руб.</b>
-                        </div>
-                        <img
-                            className='removeBtn'
-                            src='/img/btn-remove.svg'
-                            alt='Remove'
-                        />
-                    </div>
+                    ))}
                 </div>
                 <div className='cartTotalBlock'>
                     <ul>
@@ -77,6 +57,6 @@ const Drawer = () => {
             </div>
         </div>
     );
-};
+}
 
 export default Drawer;

@@ -1,0 +1,28 @@
+.card {
+    border: 1px solid #f3f3f3;
+    margin-bottom: 30px;
+    padding: 30px;
+    width: 210px;
+    border-radius: 40px;
+    margin-right: 30px;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+    &:hover {
+        box-shadow: 0px 14px 35px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+    }
+
+    .favorite {
+        position: absolute;
+        cursor: pointer;
+    }
+
+    h5 {
+        font-weight: 400;
+        font-style: 14px;
+    }
+
+    .plus {
+        cursor: pointer;
+    }
+}

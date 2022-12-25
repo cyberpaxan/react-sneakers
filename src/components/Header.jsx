@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => {
+function Header(props) {
     return (
         <div>
             <header className='d-flex justify-between align-center p-40'>
@@ -13,7 +13,7 @@ const Header = () => {
                 </div>
 
                 <ul className='d-flex'>
-                    <li className='mr-30'>
+                    <li onClick={props.onClickCart} className='mr-30 cu-p'>
                         <img
                             width={18}
                             height={18}
@@ -34,6 +34,6 @@ const Header = () => {
             </header>
         </div>
     );
-};
+}
 
 export default Header;
